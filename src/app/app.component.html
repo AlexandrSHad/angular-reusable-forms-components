@@ -1,5 +1,23 @@
 <div class="container">
 
+  <form [formGroup]="formDi">
+    <app-address-form-di></app-address-form-di>
+  </form>
+
+  <p>{{ formDi.value | json }}</p>
+  <p>touched: {{ formDi.touched }}</p>
+  <p>valid: {{ formDi.valid }}</p>
+
+  <br/>
+
+  <form [formGroup]="form">
+    <app-address-form formControlName="billingAddress"></app-address-form>
+  </form>
+
+  <p>{{ form.value | json }}</p>
+
+  <br/>
+
   <form class="form-signin" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
     <div class="text-center mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Login Page</h1>
